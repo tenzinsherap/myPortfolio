@@ -1,0 +1,147 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://art/FirTree.escn" type="PackedScene" id=1]
+[ext_resource path="res://art/GrassyPatch.escn" type="PackedScene" id=2]
+[ext_resource path="res://art/BareTree.escn" type="PackedScene" id=3]
+[ext_resource path="res://art/RockSmall.escn" type="PackedScene" id=4]
+[ext_resource path="res://art/SnowyFirTree.escn" type="PackedScene" id=5]
+[ext_resource path="res://art/RockMedium.escn" type="PackedScene" id=6]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://art/SnowyRockSmall.escn" type="PackedScene" id=8]
+[ext_resource path="res://art/SnowyRockMedium.escn" type="PackedScene" id=9]
+[ext_resource path="res://art/RockLarge.escn" type="PackedScene" id=10]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 1.62
+
+[sub_resource type="BoxShape" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.603922, 1, 0.384314, 1 )
+
+[node name="Outdoors" type="Spatial"]
+
+[node name="Sun" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.0206632, 0.999786, 0, -0.999786, 0.0206632, -8.25773, 66.2594, -3.78504 )
+
+[node name="Ground" type="StaticBody" parent="."]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 1.48143, -0.0850132, -0.569537 )
+physics_material_override = SubResource( 1 )
+
+[node name="GroundCollider" type="CollisionShape" parent="Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41306e-05, 0.152213, 0.00106655 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="CSGBox" type="CSGBox" parent="Ground/GroundCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00404907, -1.37696, 0.00436481 )
+material = SubResource( 3 )
+
+[node name="Forest" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.999252, -0.0386669, 0, 0.0386669, 0.999252, 2.60422, 1.39628, -0.816976 )
+
+[node name="FirTree9" parent="Forest" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 0.999824, 0.0187786, 0, -0.0187786, 0.999824, -0.307122, -0.533701, 7.87487 )
+
+[node name="SnowyRock2" parent="Forest" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, -3.72529e-09, 0, 3.72529e-09, 1, 2.54988, 0.885873, -1.68207 )
+
+[node name="BareTree5" parent="Forest" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.494045, -1.03244, -1.07438 )
+
+[node name="BareTree3" parent="Forest" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, -3.72529e-09, 0, 3.72529e-09, 1, -9.06534, -1.28508, 1.98482 )
+
+[node name="Rock3" parent="Forest" instance=ExtResource( 4 )]
+transform = Transform( 0.999643, -0.0267153, 0.00103377, 0.0267153, 0.999644, 1.37836e-05, -0.00103377, 1.38283e-05, 1, -9.51219, -0.964656, -3.67627 )
+
+[node name="SnowyFirTree" parent="Forest" instance=ExtResource( 5 )]
+transform = Transform( 0.999806, -0.0196888, 0.000761872, 0.0196888, 0.999807, 7.50273e-06, -0.000761872, 7.50646e-06, 1, -5.0162, -1.47077, 7.3609 )
+
+[node name="Rock2" parent="Forest" instance=ExtResource( 6 )]
+transform = Transform( 3, 0, 0, 0, 3, -2.23517e-08, 0, 2.23517e-08, 3, -8.36681, -1.42782, -13.1987 )
+
+[node name="Rock1" parent="Forest" instance=ExtResource( 4 )]
+transform = Transform( 3.73687, -0.946356, -3.18437, 0.659621, 4.90879, -0.684752, 3.25588, 0.0916693, 3.79355, -4.28292, -1.02221, -10.2149 )
+
+[node name="BareTree2" parent="Forest" instance=ExtResource( 3 )]
+transform = Transform( 0.999595, 0.0132356, 0.0251977, -0.0142332, 0.999108, 0.0398342, -0.0246478, -0.0401767, 0.998892, -3.33102, -1.22302, -6.49831 )
+
+[node name="GrassyPatch" parent="Forest" instance=ExtResource( 2 )]
+transform = Transform( -0.968561, 0.227642, -0.100346, -0.229822, -0.973178, 0.010596, -0.0952425, 0.0333248, 0.994898, -5.86883, -1.47291, -3.64249 )
+
+[node name="BareTree" parent="Forest" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, -3.35276e-08, 0, 3.35276e-08, 1, -11.5332, -0.654235, -2.6545 )
+
+[node name="FirTree7" parent="Forest" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 0.999947, 0.0102973, 0, -0.0102973, 0.999947, -1.98576, -0.420941, 5.02476 )
+
+[node name="FirTree4" parent="Forest" instance=ExtResource( 1 )]
+transform = Transform( 0.999769, -0.0209681, 0.00462702, 0.0206381, 0.997831, 0.0625256, -0.00592803, -0.0624157, 0.998034, 2.93853, -1.28761, -1.37691 )
+
+[node name="FirTree3" parent="Forest" instance=ExtResource( 1 )]
+transform = Transform( 1.54981, 0, 0, 0, 2.24759, -7.45058e-09, 0, 7.45058e-09, 2.24759, 0.67949, -1.26084, -2.71325 )
+
+[node name="FirTree" parent="Forest" instance=ExtResource( 1 )]
+transform = Transform( 1.13646, 0, 0, 0, 1.11528, -0.218384, 0, 0.218384, 1.11528, -8.15708, -1.6245, 9.40581 )
+
+[node name="FirTree2" parent="Forest" instance=ExtResource( 1 )]
+transform = Transform( 1.69804, 0, 0, 0, 1.69791, -0.0211894, 0, 0.0211894, 1.69791, -1.91668, -1.1645, 3.60166 )
+
+[node name="FirTree5" parent="Forest" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1334, -0.542845, 7.11572 )
+
+[node name="FirTree6" parent="Forest" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, -3.72529e-09, 0, 3.72529e-09, 1, -3.99438, -0.77354, 9.27508 )
+
+[node name="SnowyFirTree2" parent="Forest" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 1.11759e-08, 0, -1.11759e-08, 1, 4.65523, -0.784678, 1.41514 )
+
+[node name="RockLarge" parent="Forest" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, -22.1669, -1.07243, -2.28626 )
+
+[node name="Rock4" parent="Forest" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, -3.72529e-09, 0, 3.72529e-09, 1, -8.0788, -1.41688, 0.0746395 )
+
+[node name="FirTree8" parent="Forest" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, -7.45058e-09, 0, 7.45058e-09, 1, -7.66554, -0.650437, 0.0115482 )
+
+[node name="BareTree4" parent="Forest" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96486, -1.49955, -5.26663 )
+
+[node name="SnowyRock3" parent="Forest" instance=ExtResource( 8 )]
+transform = Transform( 0.972715, 0.00897081, 0.231829, -0.00897081, 0.99996, -0.00105423, -0.231829, -0.00105422, 0.972757, 0.452936, -0.273911, -5.1088 )
+
+[node name="GrassyPatch2" parent="Forest" instance=ExtResource( 2 )]
+transform = Transform( 0.99789, -0.0648844, 0.00251075, 0.0648843, 0.997895, 8.16397e-05, -0.00251076, 8.15652e-05, 0.999999, -4.50281, -1.69767, -3.89501 )
+
+[node name="GrassyPatch4" parent="Forest" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 1.86265e-08, 0, -1.86265e-08, 1, -12.2712, -1.82563, -8.01062 )
+
+[node name="GrassyPatch3" parent="Forest" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 1.11759e-08, 0, -1.11759e-08, 1, -5.08472, -1.79166, -4.52825 )
+
+[node name="SnowyFirTree3" parent="Forest" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 0.999936, -0.0114317, 0, 0.0114317, 0.999936, 2.47276, -1.10783, 2.49335 )
+
+[node name="RockSmall" parent="Forest" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 1.11759e-08, 0, -1.11759e-08, 1, -0.00548744, -1.10715, 5.22567 )
+
+[node name="GrassyPatch7" parent="Forest" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 1.11759e-08, 0, -1.11759e-08, 1, -8.70311, -1.85321, -6.1898 )
+
+[node name="GrassyPatch6" parent="Forest" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 7.45058e-09, 0, -7.45058e-09, 1, -7.70418, -1.64175, -3.10343 )
+
+[node name="GrassyPatch5" parent="Forest" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 7.45058e-09, 0, -7.45058e-09, 1, -6.98697, -1.7579, -5.44979 )
+
+[node name="BareTree6" parent="Forest" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 7.45058e-09, 0, -7.45058e-09, 1, -0.301418, -1.20334, 0.938213 )
+
+[node name="GrassyPatch" parent="Forest/BareTree6" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 3.72529e-09, 0, -3.72529e-09, 1, -5.28523, -0.559112, -3.48162 )
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.999133, 0.0416315, 0, -0.0416315, 0.999133, 0, 0, 0, 1, -2.09651, -1.98573, -1.87984 )
+gravity = 0.0

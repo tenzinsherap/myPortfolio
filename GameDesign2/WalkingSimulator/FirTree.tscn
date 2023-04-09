@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://art/FirTree.escn" type="PackedScene" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 1.1765
+height = 3.1435
+
+[node name="FirTree" type="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.741417, 0.601506, -0.0826381 )
+
+[node name="FirTree" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.843597, -0.265557, 0.0913348 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.988094, 0.152924, 0.0168607, -0.0164502, -0.00394913, 0.999857, 0.152969, -0.98823, -0.00138647, -0.781767, 1.34721, 0.0392125 )
+shape = SubResource( 1 )
