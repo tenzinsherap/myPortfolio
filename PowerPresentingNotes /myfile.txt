@@ -1,0 +1,26 @@
+$S$
+First Note
+First Note Body
+Final test
+Works!
+$S$
+Second note!
+this is the second note!
+testing testing one two three!
+Update
+edit
+$S$
+Third Note
+this is the third note!
+Testing Testing
+Ok Ok
+$S$
+Last note!
+this totally works!
+and doesnt break!
+awesome!
+$S$
+Title
+- Our project was meant to revolutionize the field of presentations. 
+- By making it relatively easy to deliver a structured presentation while having access to your notes.
+- Our App is meant to allow students to take a good look at their notes while giving a presentations  
