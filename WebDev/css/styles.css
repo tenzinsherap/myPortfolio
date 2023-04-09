@@ -1,0 +1,10 @@
+.homepage-slider-1 {
+  background-image: url('../images/homepage-slider-1.png');
+	padding-top: 150px;
+	padding-bottom: 150px;
+	padding-left: 100px;
+  padding-right: 100px;
+  justify-content: center;
+  background-size: cover; 
+  background-position: center center;
+}

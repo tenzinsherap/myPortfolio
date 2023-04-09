@@ -1,0 +1,1 @@
+With a team of 4, we built a functional website from scratch using HTML, CSS, and Javascript with the Bootstrap framework. 
